@@ -1,11 +1,12 @@
-# CSS Class Final Project
-Topic
-Automated Server Provisioning with Infrastructure as Code (IaC) Overview: Create scripts to automatically provision servers in the cloud using tools like Terraform or Ansible
+# Projek Akhir CCS
+Template mengandung provisioning dan konfigurasi Web Server yang akan menampilkan pesan “Welcome to Web Server 1/2/3 SEA/JP Region” menggunakan Nginx, yang dijalankan pada beberapa Azure Virtual Machines yang diletakkan di belakang sebuah Public Load Balancer. Infrastruktur didirikan pada dua region yaitu South East Asia dan Japan East sehingga akan membuat layanan Web App yang sama untuk dua region berbeda. Sebuah File Share storage yang telah dibuat menggunakan Azure Storage Account, akan di mount kepada setiap Virtual Machine pada kedua region untuk kebutuhan Web Server jika diperlukan, dan status konektivitas Web Server dengan file share akan ditampilkan pada Web App dengan pesan “File Share Status: Connected”. Selain di deploy pada dua region berbeda, Virtual Machine di deploy ke dalam Availability Zones berbeda di dalam setiap region. Hal ini dilakukan untuk aspek ‘High Availability’ sehingga layanan Web Server akan tetap Available walaupun terdapat kasus datacenter failure. Selain itu, setiap Virtual Machine juga di konfigurasikan kedalam Daily Backup. Dimana, backup setiap Virtual Machine kemudian akan disimpan kedalam Recovery Services Vault pada tiap region sehingga meningkatkan aspek Durability dan Recoverability kepada infrastruktur Web Server.
 
-Requirement:
-Minimal 2 Products/Services in the deployment (Ex:Database, File server, Web server, etc)
+Konektivitas kepada Web Server dilakukan melalui Public IP Load Balancer melalui protokol HTTP Port 80.
+_________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+# CCS Class Final Project
+The template contains provisioning and configuration of a Web Server that will display the message "Welcome to Web Server 1/2/3 SEA/JP Region" using Nginx, running on multiple Azure Virtual Machines placed behind a Public Load Balancer. The infrastructure is established in two regions: South East Asia and Japan East, creating the same Web App service for two different regions. A File Share storage created using Azure Storage Account will be mounted to each Virtual Machine in both regions for Web Server needs if required, and the Web Server's connectivity status with the file share will be displayed on the Web App with the message "File Share Status: Connected". In addition to being deployed in two different regions, Virtual Machines are deployed across different Availability Zones within each region. This is done for the 'High Availability' aspect, ensuring that the Web Server service remains available even in the event of a datacenter failure. Furthermore, each Virtual Machine is configured for Daily Backup. These backups for each Virtual Machine will be stored in Recovery Services Vault in each region, thereby enhancing the Durability and Recoverability aspects of the Web Server infrastructure.
 
-Infrastructure Description
-'Multi Region Azure-Based File Storage Web Application Server'
-A Web Application will be deployed on a load balanced Virtual Machines that allows users to upload and view files that will be stored in an Azure Storage Account. The Web Appplication will be deployed in 2 regions, Southeast Asia and Japan. Virtual machines will be deployed in multiple Availability Zones ensuring high availability, and it will run a daily backup.
+Connectivity to the Web Server is done through the Public IP Load Balancer using HTTP Protocol on Port 80.
+
+
 
